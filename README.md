@@ -1,32 +1,104 @@
-# Comandos básicos Laravel API
+<p align="center">
+  <img src="portfolio-dm.png" alt="Portfolio David Milanés" width="100%">
+</p>
+
+<h1 align="center">🚀 Portfolio Full Stack - Laravel + React</h1>
+
+<p align="center">
+Portfolio profesional desarrollado con Laravel 12, React, Vite, Bootstrap y MySQL.
+</p>
+
+<p align="center">
+
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+</p>
 
 ---
 
-# Crear proyecto Laravel
+# 🌐 Demo
+
+👉 https://dmilanes.es
+
+---
+
+# 📖 Descripción
+
+Portfolio profesional desarrollado para mostrar experiencia, proyectos, formación académica y habilidades técnicas.
+
+La aplicación está construida mediante una arquitectura moderna basada en:
+
+- Laravel 12
+- React
+- Vite
+- Bootstrap 5
+- MySQL
+
+---
+
+# 🛠️ Tecnologías
+
+## Backend
+
+- Laravel 12
+- PHP 8.3+
+- MySQL
+- API REST
+
+## Frontend
+
+- React
+- Vite
+- Bootstrap 5
+- Axios
+
+---
+
+# ⚙️ Requisitos
+
+Antes de comenzar asegúrate de tener instalado:
+
+- PHP 8.3 o superior
+- Composer
+- Node.js 20 o superior
+- npm
+- MySQL 8
+
+---
+
+# 🚀 Instalación Local
+
+## 1. Clonar el repositorio
 
 ```bash
-composer create-project laravel/laravel portfolio-api
+git clone https://github.com/tu-usuario/tu-repositorio.git
+
+cd tu-repositorio
 ```
 
 ---
 
-# Entrar al proyecto
+## 2. Instalar dependencias Laravel
 
 ```bash
-cd portfolio-api
+composer install
 ```
 
 ---
 
-# Levantar servidor
+## 3. Crear archivo .env
 
 ```bash
-php artisan serve
+cp .env.example .env
 ```
 
 ---
 
-# Generar APP_KEY
+## 4. Generar clave
 
 ```bash
 php artisan key:generate
@@ -34,164 +106,22 @@ php artisan key:generate
 
 ---
 
-# Limpiar cachés
+## 5. Configurar base de datos
 
-```bash
-php artisan config:clear
-php artisan cache:clear
-php artisan route:clear
-php artisan view:clear
-php artisan optimize:clear
-php artisan route:list
+Editar el archivo `.env`
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=portfolio
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
 ---
 
-# Ejecutar migraciones
-
-```bash
-php artisan migrate
-```
-
----
-
-# Rehacer migraciones
-
-```bash
-php artisan migrate:fresh
-```
-
----
-
-# Rehacer migraciones + seeders
-
-```bash
-php artisan migrate:fresh --seed
-```
-
----
-
-# Ejecutar seeders
-
-```bash
-php artisan db:seed
-```
-
----
-
-# Crear modelo + migración + factory + seeder + controlador
-
-```bash
-php artisan make:model Project -mfsc
-```
-
----
-
-# Crear controlador API
-
-```bash
-php artisan make:controller Api/ProjectController --api
-```
-
----
-
-# Crear request validation
-
-```bash
-php artisan make:request StoreProjectRequest
-```
-
----
-
-# Crear API Resource
-
-```bash
-php artisan make:resource ProjectResource
-```
-
----
-
-# Crear Seeder
-
-```bash
-php artisan make:seeder ProjectSeeder
-```
-
----
-
-# Crear Factory
-
-```bash
-php artisan make:factory ProjectFactory
-```
-
----
-
-# Crear Middleware
-
-```bash
-php artisan make:middleware AdminMiddleware
-```
-
----
-
-# Crear Policy
-
-```bash
-php artisan make:policy ProjectPolicy --model=Project
-```
-
----
-
-# Crear Service
-
-```bash
-php artisan make:class Services/ProjectService
-```
-
----
-
-# Crear Job
-
-```bash
-php artisan make:job SendContactEmailJob
-```
-
----
-
-# Crear Event
-
-```bash
-php artisan make:event ContactCreated
-```
-
----
-
-# Crear Listener
-
-```bash
-php artisan make:listener SendNotificationListener
-```
-
----
-
-# Instalar Sanctum
-
-```bash
-composer require laravel/sanctum
-```
-
----
-
-# Publicar Sanctum
-
-```bash
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-```
-
----
-
-# Migrar Sanctum
+## 6. Ejecutar migraciones
 
 ```bash
 php artisan migrate
@@ -199,7 +129,7 @@ php artisan migrate
 
 ---
 
-# Crear enlace storage
+## 7. Crear enlace de almacenamiento
 
 ```bash
 php artisan storage:link
@@ -207,127 +137,109 @@ php artisan storage:link
 
 ---
 
-# Ver rutas
+## 8. Iniciar Laravel
 
 ```bash
-php artisan route:list
+php artisan serve
+```
+
+Servidor:
+
+```text
+http://127.0.0.1:8000
 ```
 
 ---
 
-# Ver comandos artisan
+# ⚛️ Configuración React
+
+Entrar en la carpeta del frontend:
 
 ```bash
-php artisan list
+cd portfolio-front-react
 ```
 
----
-
-# Generar documentación IDE
-
-```bash
-php artisan ide-helper:generate
-```
-
----
-
-# Instalar dependencias frontend
+Instalar dependencias:
 
 ```bash
 npm install
 ```
 
----
+Crear archivo `.env`
 
-# Ejecutar Vite
+```env
+VITE_API_URL=http://127.0.0.1:8000/api
+```
+
+Iniciar React:
 
 ```bash
 npm run dev
 ```
 
+Servidor:
+
+```text
+http://localhost:5173
+```
+
 ---
 
-# Build producción
+# 📦 Compilar Producción
 
 ```bash
 npm run build
 ```
 
----
+La compilación se generará en:
 
-# Rutas API
-
-## routes/api.php
-
-```php
-use App\Http\Controllers\Api\ProjectController;
-
-Route::apiResource('projects', ProjectController::class);
+```text
+dist/
 ```
 
 ---
 
-# Rutas protegidas Sanctum
+# 📂 Estructura
 
-```php
-Route::middleware('auth:sanctum')->group(function () {
-
-    Route::apiResource('projects', ProjectController::class);
-
-});
+```text
+portfolio/
+│
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+├── routes/
+├── storage/
+│
+├── portfolio-front-react/
+│   ├── src/
+│   ├── public/
+│   └── dist/
+│
+├── docs/
+│   └── portfolio-cover.png
+│
+└── README.md
 ```
 
 ---
 
-Ordenar las tecnologias dse los proyectos : 
+# 👨‍💻 Autor
 
+## David Milanés Moreno
 
-UPDATE project_technologies
-SET sort_order = CASE
+🌐 https://dmilanes.es
 
-    /* =========================
-       Mi Farmacia en Casa
-       React -> Express -> MySQL
-    ========================= */
+📍 Murcia, España
 
-    WHEN project_id = 1 AND technology_id = 8 THEN 1
-    WHEN project_id = 1 AND technology_id = 9 THEN 2
-    WHEN project_id = 1 AND technology_id = 7 THEN 3
+💼 Full Stack Developer
 
-    /* =========================
-       Control Gastos Hogar
-       JavaFX -> POO -> MySQL
-    ========================= */
+---
 
-    WHEN project_id = 2 AND technology_id = 14 THEN 1
-    WHEN project_id = 2 AND technology_id = 15 THEN 2
-    WHEN project_id = 2 AND technology_id = 7 THEN 3
+# ⭐ Apóyame
 
-    /* =========================
-       Gestor Peluquería
-       PHP -> JavaScript -> MySQL
-    ========================= */
+Si te ha gustado el proyecto:
 
-    WHEN project_id = 3 AND technology_id = 16 THEN 1
-    WHEN project_id = 3 AND technology_id = 12 THEN 2
-    WHEN project_id = 3 AND technology_id = 7 THEN 3
-
-    /* =========================
-       Agenda Contactos
-       JavaFX -> POO -> MySQL
-    ========================= */
-
-    WHEN project_id = 4 AND technology_id = 14 THEN 1
-    WHEN project_id = 4 AND technology_id = 15 THEN 2
-    WHEN project_id = 4 AND technology_id = 7 THEN 3
-
-    /* =========================
-       Sistema CRA
-       EN CONSTRUCCIÓN
-    ========================= */
-
-    WHEN project_id = 5 AND technology_id = 17 THEN 1
-
-    ELSE sort_order
-
-END;
+⭐ Dale una estrella al repositorio.
